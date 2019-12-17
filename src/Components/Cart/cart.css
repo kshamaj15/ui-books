@@ -1,0 +1,10 @@
+.cart {
+     text-align: center;
+     margin: 10px;
+     border: 1px solid#eee;
+     box-shadow: 0 2px 2px #ccc;
+     padding: 20px;
+     width: 200px;
+     font-weight: bold;
+ }
+ 
