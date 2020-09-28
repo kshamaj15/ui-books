@@ -1,0 +1,49 @@
+body {
+  font-family: sans-serif;
+  background-color: rgb(247, 244, 244) !important;
+}
+
+.app-header {
+  -webkit-box-shadow: 3px 4px 9px -6px rgba(0,0,0,0.75);
+  -moz-box-shadow: 3px 4px 9px -6px rgba(0,0,0,0.75);
+  box-shadow: 3px 4px 9px -6px rgba(0,0,0,0.75);
+  &:hover {
+    -webkit-box-shadow: 3px 6px 11px -6px rgba(0,0,0,0.75);
+    -moz-box-shadow: 3px 6px 11px -6px rgba(0,0,0,0.75);
+    box-shadow: 3px 6px 11px -6px rgba(0,0,0,0.75);
+  }
+  position: sticky;
+  top: 0;
+  background-color: #fff;
+  .icon {
+    padding: 0 20px;
+    p {
+      text-align: center;
+      font-size: 13px;
+      font-weight: bold;
+    }
+  }
+  .search-box {
+    color: #ccc;
+    padding: 20px;
+    input {
+      border-radius: 8px;
+      height: 35px;
+      width: 300px;
+      padding: 8px;
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+}
+
+.books {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  width: 75%;
+}
+
+.sidebar {
+  width: 25%;
+}

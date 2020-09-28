@@ -1,60 +1,38 @@
 import React from 'react';
 import logo from '../../Assets/logo.png';
+import wish from '../../Assets/icons/wish.svg';
+import wishFiilled from '../../Assets/icons/wish-filled.svg';
+import cart from '../../Assets/icons/cart.svg';
+import profile from '../../Assets/icons/user.svg';
+import search from '../../Assets/icons/search.svg';
 
 const Header = props => {
     return(
-        <nav className="navbar navbar-expand-lg navbar-light bg-light">
-
-          <div className="col-6">
-            <img src={logo} alt="logo" height="100px" width="300px"></img>
+        <div className="app-header d-flex justify-content-between">
+          <div className="d-flex justify-content-start p-3">
+          <div className="icon">
+              <img height="50px" src={logo}/>
+            </div>
           </div>
-          <div className="col-1">
-            <button className="btn btn-info">Wishlist</button>
+          <div className="search-box">
+            <span className="pr-2"><img height="25px" src={search}/></span>
+            <input placeholder="Search the book"/>
           </div>
-          <div className="col-1">
-            <button className="btn btn-info">Cart</button>
+          <div className="d-flex justify-content-end p-3">
+            <div className="icon">
+              <img height="25px" src={wish}/>
+              <p>Wishlist</p>
+            </div>
+            <div className="icon">
+              <img height="25px" src={cart}/>
+              <p>Cart</p>
+            </div>
+            <div className="icon">
+              <img height="25px" src={profile}/>
+              <p>Profile</p>
+            </div>
           </div>
-          <div className="col-1">
-            <button className="btn btn-info">Welcome </button>
-          </div><div className="col-3">
-            <input></input> | 
-            <button className="btn btn-info">  Search </button>
-          </div>
-
-  {/* <a className="navbar-brand" href="#">Navbar</a>
-  <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span className="navbar-toggler-icon"></span>
-  </button>
-
-  <div className="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul className="navbar-nav mr-auto">
-      <li className="nav-item active">
-        <a className="nav-link" href="#">Home <span className="sr-only">(current)</span></a>
-      </li>
-      <li className="nav-item">
-        <a className="nav-link" href="#">Link</a>
-      </li>
-      <li className="nav-item dropdown">
-        <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Dropdown
-        </a>
-        <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a className="dropdown-item" href="#">Action</a>
-          <a className="dropdown-item" href="#">Another action</a>
-          <div className="dropdown-divider"></div>
-          <a className="dropdown-item" href="#">Something else here</a>
         </div>
-      </li>
-      <li className="nav-item">
-        <a className="nav-link disabled" href="#">Disabled</a>
-      </li>
-    </ul>
-    <form className="form-inline my-2 my-lg-0">
-      <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"></input>
-      <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
-  </div> */}
-</nav>
     )
 }
 

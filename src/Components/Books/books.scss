@@ -1,0 +1,35 @@
+.book {
+    background-color: #fff;
+    margin: 10px;
+    -webkit-box-shadow: 3px 4px 9px -6px rgba(0,0,0,0.75);
+  -moz-box-shadow: 3px 4px 9px -6px rgba(0,0,0,0.75);
+  box-shadow: 3px 4px 9px -6px rgba(0,0,0,0.75);
+  &:hover {
+    -webkit-box-shadow: 3px 6px 11px -6px rgba(0,0,0,0.75);
+    -moz-box-shadow: 3px 6px 11px -6px rgba(0,0,0,0.75);
+    box-shadow: 3px 6px 11px -6px rgba(0,0,0,0.75);
+  }
+  .details {
+    padding: 20px;
+    h5{
+      text-align: center;
+    }
+  }
+  .image {
+    padding: 3px;
+    img {
+      width: 100%;
+    }
+  }
+ }
+ 
+ button{
+     color: white;
+     font-weight: bold;
+     background-color: green;
+     font-size: large;
+ }
+
+ .lightgreen{
+     color: lightgreen;
+ }

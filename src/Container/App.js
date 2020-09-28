@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import './App.css';
+import './App.scss';
 import Books from '../Components/Books/books';
-import Cart from '../Components/Cart/cart';
 import Header from '../Components/Header/Header'
+import Sidebar from '../Components/Sidebar/Sidebar';
 
 class App extends Component {
 
@@ -279,14 +279,17 @@ class App extends Component {
         return (
           <div>
             <Header></Header>
-            <button onClick = {this.sortingHandler}>Sort by ratings</button>
+            <div className="d-flex justify-content-between">
+              <Sidebar></Sidebar>
+            {/* <button onClick = {this.sortingHandler}>Sort by ratings</button>
             <button onClick = {this.sortedByPriceHandler}>Sort by price</button>
             <label>
               <h3>Search</h3>
             </label>
-            <input onChange={this.searchHandler} type="text" placeholder ="Enter book Name"></input>
+            <input onChange={this.searchHandler} type="text" placeholder ="Enter book Name"></input> */}
             
-            <Cart  items = {this.state.numOfItemsInCart} cart = {this.cartHandler}></Cart>
+            {/* <Cart  items = {this.state.numOfItemsInCart} cart = {this.cartHandler}></Cart> */}
+            <div className="books">
             {this.state.filterbooks.map(book=>{
               return <Books 
               key = {book.bookID}
@@ -299,6 +302,8 @@ class App extends Component {
               >
               </Books>
             })}
+            </div>
+            </div>
           </div>
         );
       }
