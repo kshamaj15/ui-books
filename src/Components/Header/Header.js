@@ -7,6 +7,10 @@ import profile from '../../Assets/icons/user.svg';
 import search from '../../Assets/icons/search.svg';
 
 const Header = props => {
+
+  // onInputHandler = function() {
+  //   console.log(props.searchText);
+  // }
     return(
         <div className="app-header d-flex justify-content-between">
           <div className="d-flex justify-content-start p-3">
@@ -16,7 +20,7 @@ const Header = props => {
           </div>
           <div className="search-box">
             <span className="pr-2"><img height="25px" src={search}/></span>
-            <input placeholder="Search the book"/>
+            <input placeholder="Search the book" onInput={props.onInputHandler}/>
           </div>
           <div className="d-flex justify-content-end p-3">
             <div className="icon">

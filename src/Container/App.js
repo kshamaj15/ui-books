@@ -216,38 +216,38 @@ class App extends Component {
         numOfItemsInCart: 0,
         price: 0
     }
-
-
-
-    sortingHandler = () =>{
-        let sortedBooks = this.state.books.sort((a,b)=>{
-          if(a.average_rating>b.average_rating)
-          return -1;
-          else if(a.average_rating<b.average_rating)
-          return 1;
-          else
-          return 0;
-        })
-        this.setState({
-          filterbooks: sortedBooks
-        })
+    
+      sortingHandler = (event) =>{
+        console.log(event.target.value)
+        if(event.target.value === 'ratings') {
+          let sortedBooks = this.state.books.sort((a,b)=>{
+            if(a.average_rating>b.average_rating)
+            return -1;
+            else if(a.average_rating<b.average_rating)
+            return 1;
+            else
+            return 0;
+          })
+          this.setState({
+            filterbooks: sortedBooks
+          })
+        } else {
+          let sortedBooks = this.state.books.sort((a,b)=>{
+            if(a.price>b.price)
+            return -1;
+            else if(a.price<b.price)
+            return 1;
+            else
+            return 0;
+          })
+          this.setState({
+            filterbooks: sortedBooks
+          })
+        }
       }
     
-      sortedByPriceHandler = () =>{
-        let sortedBooks = this.state.books.sort((a,b)=>{
-          if(a.price>b.price)
-          return -1;
-          else if(a.price<b.price)
-          return 1;
-          else
-          return 0;
-        })
-        this.setState({
-          filterbooks: sortedBooks
-        })
-      }
-    
-      addCartHandler = (event) =>{
+      addCartHandler = (val, flag) =>{
+        console.log(val, flag)
         let value = this.state.numOfItemsInCart+1;
         //let itemsIn = this.state.itemsInCart.push(this.state.books[index])
         this.setState({
@@ -278,17 +278,9 @@ class App extends Component {
         
         return (
           <div>
-            <Header></Header>
+            <Header onInputHandler={this.searchHandler}></Header>
             <div className="d-flex justify-content-between">
-              <Sidebar></Sidebar>
-            {/* <button onClick = {this.sortingHandler}>Sort by ratings</button>
-            <button onClick = {this.sortedByPriceHandler}>Sort by price</button>
-            <label>
-              <h3>Search</h3>
-            </label>
-            <input onChange={this.searchHandler} type="text" placeholder ="Enter book Name"></input> */}
-            
-            {/* <Cart  items = {this.state.numOfItemsInCart} cart = {this.cartHandler}></Cart> */}
+              <Sidebar sortHandler={this.sortingHandler}></Sidebar>
             <div className="books">
             {this.state.filterbooks.map(book=>{
               return <Books 
@@ -298,6 +290,8 @@ class App extends Component {
               price = {book.price}
               rating = {book.average_rating}
               bclicked = {this.addCartHandler}
+              isAdded = {book.isAdded}
+              isWished = {book.isWished}
               // totalPrice = {this.state.price+book.price}
               >
               </Books>
